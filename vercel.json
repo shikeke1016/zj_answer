@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "name": "quiz-system",
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/webhook",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.py"
+    }
+  ],
+  "env": {
+    "FEISHU_APP_ID": "cli_a9475f00d17c5cd5",
+    "BITABLE_APP_TOKEN": "J6qkbf7jaaGPIys07AocdDBsnTc",
+    "QUESTION_TABLE_ID": "tblmwn04El1RDgn0",
+    "RECORD_TABLE_ID": "tblgM69XeweluqbQ",
+    "QUESTIONS_PER_SESSION": "5"
+  }
+}
